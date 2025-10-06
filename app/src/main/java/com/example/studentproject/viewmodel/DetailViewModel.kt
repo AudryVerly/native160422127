@@ -1,5 +1,6 @@
 package com.example.studentproject.viewmodel
 
+import android.R
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
@@ -16,6 +17,11 @@ class DetailViewModel(app: Application): AndroidViewModel(app) {
     val studentLD = MutableLiveData<Student>()
     private var queue: RequestQueue? = null
     val TAG = "volleytag"
+
+    fun update(id: String){
+        // diisi coding untuk simpan studentLD object ke server
+        //pakai volley
+    }
 
     fun refresh(id: String){
         queue = Volley.newRequestQueue(getApplication())
@@ -36,4 +42,5 @@ class DetailViewModel(app: Application): AndroidViewModel(app) {
         stringRequest.tag = TAG
         queue?.add(stringRequest)
     }
+
 }
